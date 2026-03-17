@@ -1,12 +1,18 @@
 from rest_framework import viewsets
-from .models import Person, Relationship
-from .serializers import PersonSerializer, RelationshipSerializer
+from .models import Person, FamilyUnion, ParentChild
+from .serializers import PersonSerializer, FamilyUnionSerializer, ParentChildSerializer
+
 
 class PersonViewSet(viewsets.ModelViewSet):
     queryset = Person.objects.all()
     serializer_class = PersonSerializer
 
 
-class RelationshipViewSet(viewsets.ModelViewSet):
-    queryset = Relationship.objects.all()
-    serializer_class = RelationshipSerializer
+class FamilyUnionViewSet(viewsets.ModelViewSet):
+    queryset = FamilyUnion.objects.all()
+    serializer_class = FamilyUnionSerializer
+
+
+class ParentChildViewSet(viewsets.ModelViewSet):
+    queryset = ParentChild.objects.all()
+    serializer_class = ParentChildSerializer

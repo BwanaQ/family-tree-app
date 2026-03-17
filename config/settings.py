@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # 3rd Party
     'rest_framework',
     'corsheaders',
+    'drf_spectacular',
     # myapps
     'family',
 ]
@@ -54,6 +55,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
 
 CORS_ALLOW_ALL_ORIGINS = True
 
