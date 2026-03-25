@@ -1,5 +1,11 @@
 from rest_framework import serializers
-from .models import Person, FamilyUnion, ParentChild
+from .models import Tree, Person, FamilyUnion, ParentChild
+
+
+class TreeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tree
+        fields = '__all__'
 
 
 class PersonSerializer(serializers.ModelSerializer):
